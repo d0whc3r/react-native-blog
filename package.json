@@ -1,0 +1,75 @@
+{
+  "name": "sample-react-native",
+  "description": "sample react native",
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build:ios": "expo build:ios",
+    "build:android": "expo build:android",
+    "eject": "expo eject",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src/ --fix",
+    "ci": "rm -fr yarn.lock node_modules dist build && yarn install"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/native": "5.7.6",
+    "@react-navigation/stack": "5.9.3",
+    "expo-status-bar": "1.0.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-native": "0.63.3",
+    "react-native-gesture-handler": "1.8.0",
+    "react-native-screens": "2.11.0",
+    "react-native-web": "0.13.18",
+    "styled-components": "5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.1",
+    "@testing-library/jest-dom": "5.11.4",
+    "@testing-library/react": "11.1.0",
+    "@types/react": "16.9.52",
+    "@types/react-dom": "16.9.8",
+    "@types/react-native": "0.63.25",
+    "@types/styled-components": "5.1.4",
+    "@typescript-eslint/eslint-plugin": "4.4.1",
+    "@typescript-eslint/parser": "4.4.1",
+    "cypress": "5.4.0",
+    "eslint": "7.11.0",
+    "eslint-config-prettier": "6.12.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.21.4",
+    "expo": "39.0.3",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "26.5.3",
+    "jest-chain": "1.1.5",
+    "jest-extended": "0.11.5",
+    "prettier": "2.1.2",
+    "react-native-web": "0.14.1",
+    "ts-jest": "26.4.1",
+    "typescript": "4.0.3"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

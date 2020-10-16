@@ -1,0 +1,6 @@
+{
+  "pluginsFile": "tests/e2e/plugins/index.js",
+  "baseUrl": "http://localhost:3000",
+  "viewportWidth": 1600,
+  "viewportHeight": 1400
+}

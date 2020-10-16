@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "jsx": "react-native",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "types": [
+      "node",
+      "jest",
+      "jest-extended",
+      "jest-chain",
+      "@testing-library/jest-dom",
+      "cypress"
+    ],
+    "allowJs": false,
+    "skipLibCheck": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
