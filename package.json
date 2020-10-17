@@ -30,7 +30,7 @@
     "react-native": "0.63.3",
     "react-native-gesture-handler": "1.8.0",
     "react-native-screens": "2.11.0",
-    "react-native-web": "0.13.18",
+    "react-native-web": "0.14.2",
     "styled-components": "5.2.0"
   },
   "devDependencies": {
