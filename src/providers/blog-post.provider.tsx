@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import BlogContext from '../context/blog.context';
-import { BlogPost, BlogPostContext } from '../types';
+import { ADD_BLOGPOST, BlogPost, BlogPostContext } from '../types';
+import { blogReducer, INITIAL_STATE } from '../redux/blog/blog.reducer';
 
 export const BlogProvider: React.FC = ({ children }) => {
-  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [{ blogPosts }, dispatch] = useReducer(blogReducer, INITIAL_STATE);
 
   const addBlogPost = (post: BlogPost) => {
-    setBlogPosts([...blogPosts, { ...post, id: Math.random().toString() }]);
+    dispatch({ type: ADD_BLOGPOST, payload: post });
   };
 
   const contextValue: BlogPostContext = {
