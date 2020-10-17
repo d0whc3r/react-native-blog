@@ -9,5 +9,5 @@ export enum NavigationRoute {
 export type RootStackParamList = {
   [NavigationRoute.HOME]: undefined;
   [NavigationRoute.SHOW]: { id: FullBlogPost['id'] };
-  [NavigationRoute.CREATE]: undefined;
+  [NavigationRoute.CREATE]?: { createPost: () => void };
 };

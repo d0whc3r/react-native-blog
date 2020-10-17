@@ -14,7 +14,10 @@ import React from 'react';
 const actions = (dispatch: React.Dispatch<BlogActionTypes>) => {
   return {
     addBlogPost: (post: AddBlogPostAction['payload']) => {
-      dispatch({ type: ADD_BLOGPOST, payload: post });
+      return new Promise((resolve) => {
+        dispatch({ type: ADD_BLOGPOST, payload: post });
+        resolve();
+      });
     },
     deleteBlogPost: (id: DeleteBlogPostAction['payload']) => {
       dispatch({ type: DELETE_BLOGPOST, payload: id });
