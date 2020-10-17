@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationRoute, RootStackParamList } from './src/types';
 import HomeScreen from './src/screens/home/home.screen';
-import BlogProvider from './src/providers/blog-post.provider';
+import { BlogProvider } from './src/providers/blog-post.provider';
 
 const Stack = createStackNavigator<RootStackParamList>();
 

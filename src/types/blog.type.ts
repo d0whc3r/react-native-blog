@@ -7,11 +7,6 @@ export interface FullBlogPost extends BlogPost {
   id: string;
 }
 
-export interface BlogPostContext {
-  data: FullBlogPost[];
-  addBlogPost: (post: BlogPost) => void;
-}
-
 export const ADD_BLOGPOST = 'blog/ADD_BLOGPOST';
 export const DELETE_BLOGPOST = 'blog/DELETE_BLOGPOST';
 export const EDIT_BLOGPOST = 'blog/EDIT_BLOGPOST';
