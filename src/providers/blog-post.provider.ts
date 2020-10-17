@@ -23,7 +23,10 @@ const actions = (dispatch: React.Dispatch<BlogActionTypes>) => {
       dispatch({ type: DELETE_BLOGPOST, payload: id });
     },
     editBlogPost: (payload: EditBlogPostPayload) => {
-      dispatch({ type: EDIT_BLOGPOST, payload });
+      return new Promise((resolve) => {
+        dispatch({ type: EDIT_BLOGPOST, payload });
+        resolve();
+      });
     }
   };
 };

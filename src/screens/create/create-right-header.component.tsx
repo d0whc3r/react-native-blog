@@ -1,15 +1,10 @@
 import React from 'react';
-import { Feather } from '@expo/vector-icons';
-import { RightHeaderContainer } from '../../styles/right-header';
 import { StackScreenProps } from '@react-navigation/stack';
 import { NavigationRoute, RootStackParamList } from '../../types';
+import RightHeader from '../../components/right-header/right-header.component';
 
 const CreateRightHeader = ({ route: { params } }: StackScreenProps<RootStackParamList, NavigationRoute.CREATE>): React.ReactNode => {
-  return (
-    <RightHeaderContainer onPress={() => params?.createPost()}>
-      <Feather name="check" size={30} />
-    </RightHeaderContainer>
-  );
+  return <RightHeader icon="check" action={() => params?.createPost()} />;
 };
 
 export default CreateRightHeader;
