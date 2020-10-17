@@ -35,6 +35,7 @@ const BlogPostForm: React.FC<BlogPostFormProps> = ({ actions, initialValues = de
     </View>
   );
 };
+
 BlogPostForm.defaultProps = {
   initialValues: defaultInitialValues
 };

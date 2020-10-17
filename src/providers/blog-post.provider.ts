@@ -7,25 +7,34 @@ import {
   DELETE_BLOGPOST,
   DeleteBlogPostAction,
   EDIT_BLOGPOST,
-  EditBlogPostPayload
+  EditBlogPostPayload,
+  FullBlogPost,
+  GET_BLOGPOST
 } from '../types';
 import React from 'react';
+import { Api } from '../api';
 
 const actions = (dispatch: React.Dispatch<BlogActionTypes>) => {
   return {
+    getBlogPosts: () => {
+      return Api.get<FullBlogPost[]>('/').then((payload) => {
+        dispatch({ type: GET_BLOGPOST, payload });
+      });
+    },
     addBlogPost: (post: AddBlogPostAction['payload']) => {
-      return new Promise((resolve) => {
-        dispatch({ type: ADD_BLOGPOST, payload: post });
-        resolve();
+      return Api.post<FullBlogPost>('/', { body: JSON.stringify(post) }).then((response) => {
+        console.log('post response', response);
+        dispatch({ type: ADD_BLOGPOST, payload: response });
       });
     },
     deleteBlogPost: (id: DeleteBlogPostAction['payload']) => {
-      dispatch({ type: DELETE_BLOGPOST, payload: id });
+      return Api.delete(`/${id}`).then(() => {
+        dispatch({ type: DELETE_BLOGPOST, payload: id });
+      });
     },
-    editBlogPost: (payload: EditBlogPostPayload) => {
-      return new Promise((resolve) => {
-        dispatch({ type: EDIT_BLOGPOST, payload });
-        resolve();
+    editBlogPost: ({ id, post }: EditBlogPostPayload) => {
+      return Api.put<FullBlogPost>(`/${id}`, { body: JSON.stringify(post) }).then(() => {
+        dispatch({ type: EDIT_BLOGPOST, payload: { id, post } });
       });
     }
   };

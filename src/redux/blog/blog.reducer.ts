@@ -1,4 +1,4 @@
-import { ADD_BLOGPOST, BlogActionTypes, BlogState, DELETE_BLOGPOST, EDIT_BLOGPOST } from '../../types';
+import { ADD_BLOGPOST, BlogActionTypes, BlogState, DELETE_BLOGPOST, EDIT_BLOGPOST, GET_BLOGPOST } from '../../types';
 
 export const INITIAL_STATE: BlogState = {
   blogPosts: []
@@ -6,10 +6,15 @@ export const INITIAL_STATE: BlogState = {
 
 export function blogReducer(state = INITIAL_STATE, action: BlogActionTypes) {
   switch (action.type) {
+    case GET_BLOGPOST:
+      return {
+        ...state,
+        blogPosts: [...action.payload]
+      };
     case ADD_BLOGPOST:
       return {
         ...state,
-        blogPosts: [...state.blogPosts, { ...action.payload, id: Math.random().toString(36).slice(2) }]
+        blogPosts: [...state.blogPosts, action.payload]
       };
     case DELETE_BLOGPOST:
       return {
