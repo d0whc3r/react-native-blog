@@ -1,6 +1,6 @@
 {
-  "name": "sample-react-native",
-  "description": "sample react native",
+  "name": "blog",
+  "description": "sample blog app with react native",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
