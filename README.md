@@ -1,3 +1,3 @@
-# React native template
+# React native blog post
 
-A start template for react native using typescript
+React native app for blog posts
