@@ -7,7 +7,7 @@ export interface FullBlogPost extends BlogPost {
   id: string;
 }
 
-export const ADD_BLOGPOST = 'blog/ADD_BLOGPOST';
+// export const ADD_BLOGPOST = 'blog/ADD_BLOGPOST';
 export const DELETE_BLOGPOST = 'blog/DELETE_BLOGPOST';
 export const EDIT_BLOGPOST = 'blog/EDIT_BLOGPOST';
 export const GET_BLOGPOST = 'blog/GET_BLOGPOST';
@@ -16,10 +16,10 @@ export interface BlogState {
   blogPosts: FullBlogPost[];
 }
 
-export interface AddBlogPostAction {
-  type: typeof ADD_BLOGPOST;
-  payload: FullBlogPost;
-}
+// export interface AddBlogPostAction {
+//   type: typeof ADD_BLOGPOST;
+//   payload: FullBlogPost;
+// }
 
 export interface DeleteBlogPostAction {
   type: typeof DELETE_BLOGPOST;
@@ -41,4 +41,4 @@ export interface GetBlogPostAction {
   payload: FullBlogPost[];
 }
 
-export type BlogActionTypes = AddBlogPostAction | DeleteBlogPostAction | EditBlogPostAction | GetBlogPostAction;
+export type BlogActionTypes = /*AddBlogPostAction*/ DeleteBlogPostAction | EditBlogPostAction | GetBlogPostAction;

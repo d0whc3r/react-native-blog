@@ -1,9 +1,8 @@
 import CreateDataContext from '../context/create-data.context';
 import { blogReducer, INITIAL_STATE } from '../redux/blog/blog.reducer';
 import {
-  ADD_BLOGPOST,
-  AddBlogPostAction,
   BlogActionTypes,
+  BlogPost,
   DELETE_BLOGPOST,
   DeleteBlogPostAction,
   EDIT_BLOGPOST,
@@ -21,11 +20,11 @@ const actions = (dispatch: React.Dispatch<BlogActionTypes>) => {
         dispatch({ type: GET_BLOGPOST, payload });
       });
     },
-    addBlogPost: (post: AddBlogPostAction['payload']) => {
-      return Api.post<FullBlogPost>('/', { body: JSON.stringify(post) }).then((response) => {
-        console.log('post response', response);
-        dispatch({ type: ADD_BLOGPOST, payload: response });
-      });
+    addBlogPost: (post: BlogPost) => {
+      return Api.post<FullBlogPost>('/', { body: JSON.stringify(post) });
+      //   .then((response) => {
+      //   dispatch({ type: ADD_BLOGPOST, payload: response });
+      // });
     },
     deleteBlogPost: (id: DeleteBlogPostAction['payload']) => {
       return Api.delete(`/${id}`).then(() => {
