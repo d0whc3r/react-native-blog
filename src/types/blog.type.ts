@@ -7,6 +7,7 @@ export interface FullBlogPost extends BlogPost {
   id: string;
 }
 
+export const GET_BLOGPOST = 'blog/GET_BLOGPOST';
 export const ADD_BLOGPOST = 'blog/ADD_BLOGPOST';
 export const DELETE_BLOGPOST = 'blog/DELETE_BLOGPOST';
 export const EDIT_BLOGPOST = 'blog/EDIT_BLOGPOST';

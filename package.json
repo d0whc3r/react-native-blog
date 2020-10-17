@@ -20,6 +20,7 @@
     "ci": "rm -fr yarn.lock node_modules dist build && yarn install"
   },
   "dependencies": {
+    "@expo/vector-icons": "10.2.1",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "5.7.6",
     "@react-navigation/stack": "5.9.3",

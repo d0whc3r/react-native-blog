@@ -1,7 +1,11 @@
+import { FullBlogPost } from './blog.type';
+
 export enum NavigationRoute {
-  HOME = 'Home'
+  HOME = 'Home',
+  SHOW = 'Show'
 }
 
 export type RootStackParamList = {
   [NavigationRoute.HOME]: undefined;
+  [NavigationRoute.SHOW]: { id: FullBlogPost['id'] };
 };

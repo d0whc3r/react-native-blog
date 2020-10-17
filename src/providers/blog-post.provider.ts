@@ -1,12 +1,26 @@
 import CreateDataContext from '../context/create-data.context';
 import { blogReducer, INITIAL_STATE } from '../redux/blog/blog.reducer';
-import { ADD_BLOGPOST, BlogActionTypes, BlogPost } from '../types';
+import {
+  ADD_BLOGPOST,
+  AddBlogPostAction,
+  BlogActionTypes,
+  DELETE_BLOGPOST,
+  DeleteBlogPostAction,
+  EDIT_BLOGPOST,
+  EditBlogPostPayload
+} from '../types';
 import React from 'react';
 
 const actions = (dispatch: React.Dispatch<BlogActionTypes>) => {
   return {
-    addBlogPost: (post: BlogPost) => {
+    addBlogPost: (post: AddBlogPostAction['payload']) => {
       dispatch({ type: ADD_BLOGPOST, payload: post });
+    },
+    deleteBlogPost: (id: DeleteBlogPostAction['payload']) => {
+      dispatch({ type: DELETE_BLOGPOST, payload: id });
+    },
+    editBlogPost: (payload: EditBlogPostPayload) => {
+      dispatch({ type: EDIT_BLOGPOST, payload });
     }
   };
 };
