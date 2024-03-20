@@ -42,7 +42,7 @@
     "@testing-library/react": "11.1.0",
     "@types/react": "16.9.53",
     "@types/react-dom": "16.9.8",
-    "@types/react-native": "0.63.25",
+    "@types/react-native": "0.73.0",
     "@types/styled-components": "5.1.4",
     "@typescript-eslint/eslint-plugin": "4.4.1",
     "@typescript-eslint/parser": "4.4.1",
